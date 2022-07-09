@@ -1,0 +1,60 @@
+#shower h1 {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: translate(0, 0);
+}
+
+#shower > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100vw - 320px);
+}
+
+@media (max-width: 750px) {
+  #shower > div {
+    width: 100vw;
+    padding-inline: 16px;
+  }
+}
+
+#shower > div > * {
+  text-align: center;
+  max-width: 100vw;
+}
+
+#shower iframe {
+  width: 100%;
+  margin-top: 16px;
+}
+
+#shower svg {
+  display: none;
+}
+
+#shower.raining svg {
+  display: block;
+}
+
+.rain__drop {
+  animation-delay: calc(var(--d) * 1s);
+  animation-duration: calc(var(--a) * 1s);
+  animation-iteration-count: infinite;
+  animation-name: drop;
+  animation-timing-function: linear;
+  height: 30px;
+  left: calc(var(--x) * 1%);
+  position: absolute;
+  top: calc((var(--y) + 50) * -1px);
+}
+
+.rain__drop path {
+  fill: #a1c6cc;
+  opacity: var(--o);
+  transform: scaleY(calc(var(--s) * 1.5));
+}

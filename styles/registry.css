@@ -1,0 +1,52 @@
+#registry {
+  display: grid;
+  place-content: center;
+  gap: 50px;
+}
+
+#registry .link-wrapper {
+  transform: scale(1);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(50px);
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+#registry.visible .link-wrapper {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+
+#registry .link-wrapper::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(0);
+}
+
+#registry .link-wrapper::before {
+  background-image: url(https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/AUX/01_amazon_smile_RGB_SQUID._TTW_.png);
+}
+
+#registry .link-wrapper span {
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.49, 0.005, 0.545, 1.58);
+}
+
+#registry .link-wrapper:hover span {
+  transform: translateY(0) scale(0);
+}
+
+#registry .link-wrapper:hover::before {
+  transform: scale(1);
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.49, 0.005, 0.545, 1.58);
+}

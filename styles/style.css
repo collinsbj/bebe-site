@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap");
+@import "landing.css";
+@import "registry.css";
+@import "shower.css";
+@import "countdown.css";
+@import "animations.css";
+
+html * {
+  --pink-primary: #f6aca2;
+  --pink-secondary: #f49b90;
+  --pink-tertiary: #f49b90;
+  --pink-quaternary: #f07a6a;
+  --pink-quinary: #ee6352;
+
+  --blue-primary: #a2dcf6;
+  --blue-secondary: #87d7fc;
+  --blue-tertiary: #58c7fb;
+  --blue-quaternary: #3ec2ff;
+  --blue-quinary: #20b8fe;
+
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.thin {
+  font-weight: 400;
+}
+
+@media (max-width: 750px) {
+  nav {
+    display: none;
+  }
+}
+
+nav {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+nav ul {
+  padding: 0;
+  position: relative;
+}
+
+nav li {
+  opacity: 0;
+  list-style: none;
+  position: relative;
+  transform: translateY(50px);
+}
+
+body.visible li {
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 1s;
+  transition-delay: calc(0.1s * var(--i));
+  transition-timing-function: ease-in-out;
+}
+
+nav li:nth-child(1) {
+  --color: #1877f2;
+}
+
+nav li:nth-child(2) {
+  --color: #ff0000;
+}
+
+nav li:nth-child(3) {
+  --color: #0099ff;
+}
+
+nav li:nth-child(4) {
+  --color: #e4405f;
+}
+
+nav li::before {
+  content: attr(data-text);
+  color: var(--color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(40px, -50%);
+  font-size: 5vw;
+  pointer-events: none;
+  font-weight: 700;
+  transition-duration: 0.5s;
+  opacity: 0;
+  transition-timing-function: ease-in-out;
+}
+
+nav li:hover:before {
+  opacity: 0.5;
+  transform: translate(70px, -50%);
+}
+
+nav li a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  transition: background 0.25s, color 0.1s;
+}
+
+nav li a:hover {
+  background: var(--color);
+  color: #e6e6e6;
+}
+
+nav li a .material-symbols-rounded {
+  font-size: 3rem;
+  transition-duration: 0.25s;
+  pointer-events: none;
+}
+
+nav li a:hover .material-symbols-rounded {
+  transform: scale(1.75) translateZ(50px);
+}
+
+.js-tilt-glare {
+  border-radius: 10px;
+}
+
+#wrapper {
+  height: var(--max-vh);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: var(--max-vh);
+  min-height: var(--max-vh);
+  width: 100vw;
+  min-width: 100vw;
+  position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+section h1 {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 7rem);
+}
+
+section h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+body.visible section h1 {
+  opacity: 1;
+  transform: translate(-50%, calc(-50% - 50px));
+  transition: opacity 1s, transform 1s;
+  transition-timing-function: ease-in-out;
+}

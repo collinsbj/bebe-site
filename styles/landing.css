@@ -1,0 +1,26 @@
+#landing h1 .letter {
+  --color-primary: var(--pink-primary);
+  --color-secondary: var(--pink-secondary);
+  --color-tertiary: var(--pink-tertiary);
+  --color-quaternary: var(--pink-quaternary);
+  --color-quinary: var(--pink-quinary);
+
+  cursor: default;
+  display: inline;
+}
+
+#landing h1 .letter.blue {
+  --color-primary: var(--blue-primary);
+  --color-secondary: var(--blue-secondary);
+  --color-tertiary: var(--blue-tertiary);
+  --color-quaternary: var(--blue-quaternary);
+  --color-quinary: var(--blue-quinary);
+}
+
+#landing h1 .letter:hover {
+  color: transparent;
+  text-shadow: 0px 0px 0 var(--color-primary), 2px 2px 0 var(--color-secondary),
+    4px 4px 0 var(--color-tertiary), 6px 6px var(--color-quaternary),
+    8px 8px 0 var(--color-quinary);
+  animation: shadows 1.2s ease-in infinite;
+}

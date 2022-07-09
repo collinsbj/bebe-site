@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>Baby Site</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li data-text="Home" style="--i: 1">
+          <a href="#landing">
+            <span class="material-symbols-rounded"> arrow_upward </span>
+          </a>
+        </li>
+
+        <li data-text="Registry" style="--i: 2">
+          <a href="#registry">
+            <span class="material-symbols-rounded"> shopping_cart </span>
+          </a>
+        </li>
+
+        <li data-text="Shower" style="--i: 4">
+          <a href="#shower">
+            <span class="material-symbols-rounded"> shower </span>
+          </a>
+        </li>
+
+        <li data-text="Countdown" style="--i: 5">
+          <a href="#countdown">
+            <span class="material-symbols-rounded"> hourglass_bottom </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="wrapper">
+      <section id="landing">
+        <h1></h1>
+      </section>
+
+      <section id="registry">
+        <h1>
+          <a
+            href="https://www.amazon.com/baby-reg/1UHH27KPNY9HR"
+            target="_blank"
+            class="link-wrapper"
+          >
+            <span>
+              Registry
+              <span class="material-symbols-rounded"> open_in_new</span>
+            </span>
+          </a>
+        </h1>
+      </section>
+
+      <section id="shower">
+        <div>
+          <h1>Baby Shower</h1>
+          <h2>When: <span class="thin">September 17th, 1pm</span></h2>
+          <h2>
+            Where:
+            <span class="thin">Settlers Park</span>
+          </h2>
+          <h2>
+            <span class="thin">14800 E Walsh Dr, Aurora, CO, 80012</span>
+          </h2>
+
+          <h2>
+            RSVP <span class="material-symbols-rounded"> open_in_new</span>
+          </h2>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.6742398101837!2d-104.81739158385577!3d39.70202780671668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c62ec911c2c81%3A0x89d872c762654488!2sSettler&#39;s%20Park!5e0!3m2!1sen!2sus!4v1657304902694!5m2!1sen!2sus"
+            width="300"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="countdown">
+        <h1></h1>
+      </section>
+    </div>
+
+    <script src="vanilla-tilt.min.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
